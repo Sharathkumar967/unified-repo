@@ -1,135 +1,155 @@
-# Turborepo starter
+# Eksaq Unified Monorepo
 
-This Turborepo starter is maintained by the Turborepo core team.
+This monorepo contains the Eksaq unified mobile and web applications, built with React Native (Expo) and React, respectively. It is managed as a Turborepo and uses `pnpm` for package management.
 
-## Using this example
+## Creating the Monorepo
 
-Run the following command:
+This project was created using the Turborepo CLI:
 
 ```sh
 npx create-turbo@latest
 ```
 
-## What's inside?
+## Creating the Apps
 
-This Turborepo includes the following packages/apps:
+### Web (React)
 
-### Apps and Packages
+The web application was created using Vite:
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build
-
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build
-yarn dlx turbo build
-pnpm exec turbo build
+```sh
+pnpm create vite apps/web --template react-ts
 ```
 
-You can build a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
+### Mobile (React Native with Expo)
 
-```
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build --filter=docs
+The mobile application was created using Expo:
 
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build --filter=docs
-yarn exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
+```sh
+npx create-expo-app apps/mobile --template
 ```
 
-### Develop
+## PNPM
 
-To develop all apps and packages, run the following command:
+We use `pnpm` as our package manager. `pnpm` is fast and efficient with disk space. It uses a content-addressable store to save all package files on disk. When you install a package, `pnpm` checks if the file is already in the store. If it is, it creates a hard link to it, avoiding redundant downloads and saving disk space.
 
-```
-cd my-turborepo
+### Installing Dependencies
 
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev
+When a new package is added to any of the projects, or to the root `package.json`, you need to run the following command from the root of the monorepo to install all dependencies:
 
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev
-yarn exec turbo dev
-pnpm exec turbo dev
+```sh
+pnpm install
 ```
 
-You can develop a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
+## Running the Applications
 
-```
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev --filter=web
+### From the Root
 
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev --filter=web
-yarn exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
-```
+You can run both the mobile and web applications from the root of the monorepo using Turborepo commands:
 
-### Remote Caching
+- **Web:**
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+  ```sh
+  pnpm dev --filter web
+  ```
 
-Turborepo can use a technique known as [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+- **Mobile:**
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
+  ```sh
+  pnpm dev --filter mobile
+  ```
 
-```
-cd my-turborepo
+### From the App Directories
 
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo login
+You can also run the applications from their respective directories.
 
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo login
-yarn exec turbo login
-pnpm exec turbo login
-```
+- **Web:**
+  1.  Navigate to the web app directory:
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+      ```sh
+      cd apps/web
+      ```
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+  2.  Start the development server:
 
-```
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo link
+      ```sh
+      pnpm dev
+      ```
 
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo link
-yarn exec turbo link
-pnpm exec turbo link
-```
+- **Mobile:**
+  1.  Navigate to the mobile app directory:
 
-## Useful Links
+      ````sh
+      cd apps/mobile
+              ```
 
-Learn more about the power of Turborepo:
+          2.  Start the development server:
 
-- [Tasks](https://turborepo.dev/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.dev/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.dev/docs/reference/configuration)
-- [CLI Usage](https://turborepo.dev/docs/reference/command-line-reference)
+              ```sh
+              pnpm start
+              ```
+
+      ## Adding Shared Packages
+
+      To add a new shared package to the `packages` directory (e.g., for services, utils, etc.), follow these steps:
+
+      1.  **Create a directory for your new package:**
+
+          For example, to create a `services` package:
+
+          ```sh
+          mkdir -p packages/services
+          cd packages/services
+          ```
+
+      2.  **Initialize a `package.json` file:**
+
+          Run `pnpm init` to create a `package.json` file.
+
+          ```sh
+          pnpm init
+          ```
+
+      3.  **Name your package with the `@unified` scope:**
+
+          Open the newly created `package.json` file and change the `name` field to give it a scoped name. For example:
+
+          ```json
+          {
+            "name": "@unified/services",
+            "version": "1.0.0",
+            "description": "",
+            "main": "index.js",
+            "scripts": {
+              "test": "echo \"Error: no test specified\" && exit 1"
+            },
+            "keywords": [],
+            "author": "",
+            "license": "ISC"
+          }
+          ```
+
+      4.  **Add your code to the package.**
+
+      5.  **Install the new package in your apps:**
+
+          To use the new package in your `web` or `mobile` app, add it to the `dependencies` in the respective `package.json` file. For example, in `apps/web/package.json`:
+
+          ```json
+          "dependencies": {
+            "@unified/services": "workspace:*",
+            // ... other dependencies
+          },
+          ```
+
+      6.  **Install all dependencies from the root:**
+
+          Navigate back to the root of the monorepo and run `pnpm install`.
+
+          ```sh
+          cd ../..
+          pnpm install
+          ```
+
+          This will install the new package and create a symlink to it in the `node_modules` directory of the apps that use it. You can verify this by checking for a `@unified` folder inside `node_modules` at respective apps level.
+
+      ````
