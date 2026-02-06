@@ -87,11 +87,11 @@ You can also run the applications from their respective directories.
               ```sh
               pnpm start
               ```
+      ````
 
       ## Adding Shared Packages
 
       To add a new shared package to the `packages` directory (e.g., for services, utils, etc.), follow these steps:
-
       1.  **Create a directory for your new package:**
 
           For example, to create a `services` package:
@@ -150,6 +150,4 @@ You can also run the applications from their respective directories.
           pnpm install
           ```
 
-          This will install the new package and create a symlink to it in the `node_modules` directory of the apps that use it. You can verify this by checking for a `@unified` folder inside `node_modules` at respective apps level.
-
-      ````
+            This will install the new package and create a symlink to it in the `node_modules` directory of the apps that use it. You can verify this by checking for a `@unified` folder inside `node_modules` at respective apps level. ```
