@@ -112,9 +112,15 @@ importers:
         specifier: 0.5.1
         version: 0.5.1(@babel/core@7.29.0)(react-native@0.81.5(@babel/core@7.29.0)(@types/react@19.2.3)(react@19.1.0))(react@19.1.0)
     devDependencies:
+      '@repo/api':
+        specifier: workspace:*
+        version: link:../../packages/api
       '@repo/redux':
         specifier: workspace:*
         version: link:../../packages/redux
+      '@repo/services':
+        specifier: workspace:*
+        version: link:../../packages/services
       eslint:
         specifier: ^9.25.0
         version: 9.39.2(jiti@2.6.1)

@@ -1,5 +1,4 @@
 import { Stack } from "expo-router";
-
 import { StoreProvider } from "@repo/redux";
 
 export default function RootLayout() {
