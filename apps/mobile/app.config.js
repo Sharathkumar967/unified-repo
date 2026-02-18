@@ -27,7 +27,11 @@ export default {
       typedRoutes: true,
     },
 
-    plugins: ["expo-router"],
+    // ✅ FIXED HERE
+    plugins: [
+      "expo-router",
+      "expo-secure-store", // <-- ADD THIS
+    ],
 
     extra: {
       eas: {

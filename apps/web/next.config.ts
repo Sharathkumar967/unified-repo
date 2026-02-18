@@ -11,10 +11,6 @@ const nextConfig: NextConfig = {
     "@repo/services",
     "@repo/types",
   ],
-
-  experimental: {
-    externalDir: true,
-  },
 };
 
 export default nextConfig;

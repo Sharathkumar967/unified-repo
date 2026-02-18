@@ -3,10 +3,12 @@ frontend:
   phases:
     preBuild:
       commands:
+        - npm install -g pnpm
         - pnpm install
     build:
       commands:
         - pnpm turbo run build --filter=web
+        - pnpm --filter web run export
   artifacts:
     baseDirectory: apps/web/out
     files:
