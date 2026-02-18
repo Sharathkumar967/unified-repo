@@ -12,14 +12,18 @@
     "next": "16.1.6",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "sonner": "^2.0.7"
-  },
-  "devDependencies": {
+    "sonner": "^2.0.7",
+    "@reduxjs/toolkit": "^2.11.2",
+    "react-redux": "^9.2.0",
+    "redux-persist": "^6.0.0",
+
     "@repo/api": "workspace:*",
     "@repo/core": "workspace:*",
     "@repo/redux": "workspace:*",
     "@repo/services": "workspace:*",
-    "@repo/types": "workspace:*",
+    "@repo/types": "workspace:*"
+  },
+  "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

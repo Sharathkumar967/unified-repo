@@ -2,22 +2,10 @@
   "compilerOptions": {
     "target": "ES2020",
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "Bundler",
     "strict": true,
     "jsx": "react-jsx",
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "composite": true,
-    "declaration": true,
-    "declarationMap": true,
-    "baseUrl": ".",
-    "paths": {
-      "@repo/types": ["packages/types/src"],
-      "@repo/api": ["packages/api/src"],
-      "@repo/core": ["packages/core/src"],
-      "@repo/redux": ["packages/redux/src"],
-      "@repo/services": ["packages/services/src"],
-      "@repo/hooks": ["packages/hooks/src"]
-    }
+    "esModuleInterop": true
   }
 }
