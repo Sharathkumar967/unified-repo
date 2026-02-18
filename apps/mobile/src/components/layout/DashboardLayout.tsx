@@ -1,8 +1,7 @@
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { useRouter } from "expo-router";
 import { tokenStorage } from "@repo/api";
-import { useAppDispatch } from "@repo/redux";
-import { setIsAuthenticated, setAuthDetails } from "@repo/redux";
+import { clearAuthDetails, useAppDispatch } from "@repo/redux";
 import React from "react";
 
 interface Props {
@@ -14,11 +13,11 @@ export default function DashboardLayout({ children }: Props) {
   const dispatch = useAppDispatch();
 
   const handleLogout = async () => {
+    console.log("calling button");
     await tokenStorage.removeAccessToken?.();
     await tokenStorage.removeRefreshToken?.();
 
-    dispatch(setIsAuthenticated(false));
-    dispatch(setAuthDetails({ role: null, stage: null }));
+    dispatch(clearAuthDetails());
 
     router.replace("/(auth)/login");
   };

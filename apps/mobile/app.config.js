@@ -2,8 +2,9 @@ const APP_ENV = process.env.APP_ENV ?? "development";
 
 export default {
   expo: {
-    name: "mobile",
-    slug: "mobile",
+    name: "Eksaq",
+    slug: "eksaq-mobile",
+    scheme: "eksaq",
     version: "1.0.0",
 
     runtimeVersion: {
@@ -11,12 +12,12 @@ export default {
     },
 
     ios: {
-      bundleIdentifier: "com.yourcompany.yourapp",
+      bundleIdentifier: "com.eksaq.mobile",
       supportsTablet: true,
     },
 
     android: {
-      package: "com.yourcompany.yourapp",
+      package: "com.eksaq.mobile",
       adaptiveIcon: {
         foregroundImage: "./assets/images/android-icon-foreground.png",
         backgroundColor: "#FFFFFF",
@@ -27,11 +28,7 @@ export default {
       typedRoutes: true,
     },
 
-    // ✅ FIXED HERE
-    plugins: [
-      "expo-router",
-      "expo-secure-store", // <-- ADD THIS
-    ],
+    plugins: ["expo-router", "expo-secure-store"],
 
     extra: {
       eas: {
@@ -41,7 +38,7 @@ export default {
       apiUrl:
         APP_ENV === "production"
           ? "https://user-dev.eksaq.in/api"
-          : "http://localhost:4001/api",
+          : "http://10.0.2.2:4001",
     },
   },
 };

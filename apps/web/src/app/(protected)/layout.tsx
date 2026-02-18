@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { tokenStorage } from "@repo/api";
 import { useAppSelector } from "@repo/redux";
-import DashboardLayout from "@/src/components/layout/DashboardLayout";
+import DashboardLayout from "@/components/layout/DashboardLayout";
 
 export default function ProtectedLayout({
   children,
