@@ -35,7 +35,7 @@ export default {
       // Environment-specific configuration
       apiUrl:
         APP_ENV === "production"
-          ? "https://your-production-api.com/api" // TODO: Replace with your actual production API URL
+          ? "https://user-dev.eksaq.in/api"
           : "http://localhost:4001/api",
     },
   },
