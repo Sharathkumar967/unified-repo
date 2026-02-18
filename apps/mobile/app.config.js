@@ -6,17 +6,17 @@ export default {
     slug: "mobile",
     version: "1.0.0",
 
-    // Production-ready metadata
-    // https://docs.expo.dev/versions/latest/config/app/#runtimeversion
     runtimeVersion: {
       policy: "appVersion",
     },
+
     ios: {
-      bundleIdentifier: "com.yourcompany.yourapp", // TODO: Replace with your actual bundle identifier
+      bundleIdentifier: "com.yourcompany.yourapp",
       supportsTablet: true,
     },
+
     android: {
-      package: "com.yourcompany.yourapp", // TODO: Replace with your actual package name
+      package: "com.yourcompany.yourapp",
       adaptiveIcon: {
         foregroundImage: "./assets/images/android-icon-foreground.png",
         backgroundColor: "#FFFFFF",
@@ -24,15 +24,16 @@ export default {
     },
 
     experiments: {
-      // Typed routes are generally safe for production and improve developer experience.
       typedRoutes: true,
     },
+
     plugins: ["expo-router"],
+
     extra: {
-      router: {
-        origin: false,
+      eas: {
+        projectId: "113c4360-f0c6-42ba-81b6-86912f2362f4",
       },
-      // Environment-specific configuration
+
       apiUrl:
         APP_ENV === "production"
           ? "https://user-dev.eksaq.in/api"
