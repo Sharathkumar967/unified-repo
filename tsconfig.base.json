@@ -6,11 +6,6 @@
     "strict": true,
     "jsx": "react-jsx",
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-
-    "baseUrl": ".",
-    "paths": {
-      "@repo/*": ["packages/*/src"]
-    }
+    "esModuleInterop": true
   }
 }
