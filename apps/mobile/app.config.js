@@ -35,19 +35,10 @@ export default {
       eas: {
         projectId: "08638653-a09f-4b90-a814-8ff019fc51bb",
       },
-
       apiUrl:
         APP_ENV === "production"
           ? "https://user-dev.eksaq.in/api"
           : "http://10.0.2.2:4001",
     },
-    eas: {
-      projectId: "08638653-a09f-4b90-a814-8ff019fc51bb",
-    },
-
-    apiUrl:
-      APP_ENV === "production"
-        ? "https://user-dev.eksaq.in/api"
-        : "http://10.0.2.2:4001",
   },
 };
