@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "f1c10110-12f5-4073-9605-57a98d2ffa52"
+      }
+    },
+    "android": {
+      "package": "com.sharath_kumar.unifiedrepo"
+    }
+  }
+}

@@ -1,9 +1,12 @@
 {
   "cli": {
-    "version": ">= 7.0.0"
+    "version": ">= 7.0.0",
+    "appVersionSource": "remote"
   },
   "build": {
     "development": {
+      "node": "18.18.0",
+      "pnpm": "9.0.0",
       "developmentClient": true,
       "distribution": "internal",
       "env": {
@@ -11,12 +14,22 @@
       }
     },
     "preview": {
+      "node": "18.18.0",
+      "pnpm": "9.0.0",
       "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      },
       "env": {
         "APP_ENV": "production"
       }
     },
     "production": {
+      "node": "18.18.0",
+      "pnpm": "9.0.0",
+      "android": {
+        "buildType": "app-bundle"
+      },
       "env": {
         "APP_ENV": "production"
       }
