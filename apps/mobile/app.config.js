@@ -4,6 +4,7 @@ export default {
   expo: {
     name: "Eksaq",
     slug: "eksaq-mobile",
+    owner: "sharath_kumar",
     scheme: "eksaq",
     version: "1.0.0",
 
@@ -32,7 +33,7 @@ export default {
 
     extra: {
       eas: {
-        projectId: "113c4360-f0c6-42ba-81b6-86912f2362f4",
+        projectId: "08638653-a09f-4b90-a814-8ff019fc51bb",
       },
 
       apiUrl:
@@ -40,5 +41,13 @@ export default {
           ? "https://user-dev.eksaq.in/api"
           : "http://10.0.2.2:4001",
     },
+    eas: {
+      projectId: "08638653-a09f-4b90-a814-8ff019fc51bb",
+    },
+
+    apiUrl:
+      APP_ENV === "production"
+        ? "https://user-dev.eksaq.in/api"
+        : "http://10.0.2.2:4001",
   },
 };
